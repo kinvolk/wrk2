@@ -209,7 +209,7 @@ int main(int argc, char **argv) {
 
  //   print_stats_header();
   //  print_stats("Latency", latency_stats, format_time_us);
-  //  print_stats("Req/Sec", statistics.requests, format_metric);
+   print_stats("Req/Sec", statistics.requests, format_metric);
 //    if (cfg.latency) print_stats_latency(latency_stats);
 
     if (cfg.latency) {
@@ -227,8 +227,8 @@ int main(int argc, char **argv) {
 
     char *runtime_msg = format_time_us(runtime_us);
 
-    // //printf("  %"PRIu64" requests in %s, %sB read\n",
-    //         complete, runtime_msg, format_binary(bytes));
+    //printf("  %"PRIu64" requests in %s, %sB read\n",
+          //  complete, runtime_msg, format_binary(bytes));
     if (errors.connect || errors.read || errors.write || errors.timeout) {
         //printf("  Socket errors: connect %d, read %d, write %d, timeout %d\n",
            //    errors.connect, errors.read, errors.write, errors.timeout);

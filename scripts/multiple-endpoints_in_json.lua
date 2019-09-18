@@ -24,7 +24,7 @@
      local ret, count = string.gsub(str, match, "%1", 1)
      if count == 0 then
          if not default then
-             print(string.format("Error parsing URL '%s': %s",str,err_msg))
+            -- print(string.format("Error parsing URL '%s': %s",str,err_msg))
              os.exit(1)
          end
          ret = default
@@ -130,7 +130,7 @@
     -- generate table of URL strings from first thread's endpoints table
     -- (all threads generate the same table in init())
     io.write("{\n")
-    io.write(string.format("\"TotalRequests\": \"%d\",\n", summary.requests))
+   -- io.write(string.format("\"TotalRequests\": \"%d\",\n", summary.requests))
     io.write(string.format("\"DurationInMicroseconds\": \"%0.2f\",\n", summary.duration))
     io.write(string.format("\"Bytes\": \"%d\",\n", summary.bytes))
     io.write(string.format("\"RequestsPerSec\": \"%0.2f\",\n", (summary.requests/summary.duration)*1e6))
@@ -161,7 +161,7 @@
                               end)
      end
      for i=0, #urls, 1 do
-         print(string.format("\"Url_".. i .."\": \"%s\",\n\"UrlRequestCount_".. i .."\": %d", urls[i], counts[i]))
+         print(string.format("\"Url_".. i+1 .."\": \"%s\",\n\"UrlRequestCount_".. i+1 .."\": %d,", urls[i], counts[i]))
      end
 
 
